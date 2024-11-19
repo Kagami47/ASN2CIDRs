@@ -13,7 +13,7 @@ export default {
     else return new Response('"无效的 ASN:1"', { status: 400 });
 
     GH_NAME = env.GH_NAME || GH_NAME;
-    const ASN_URL = `https://raw.githubusercontent.com/ipverse/asn-ip/refs/heads/master/as/${ASN}/aggregated.json`;
+    const ASN_URL = `https://raw.githubusercontent.com/${GH_NAME}/asn-ip/refs/heads/master/as/${ASN}/aggregated.json`;
     const response = await fetch(ASN_URL);
     if (!response.ok) return new Response('"无效的 ASN:2"', { status: 400 });
     
